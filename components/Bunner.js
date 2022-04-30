@@ -12,7 +12,7 @@ export default function Bunner() {
             />
             <div className="absolute top-1/2 w-full text-center">
                 <p className="text-sm sm:text-lg">Not Sure where to go? Perfect</p>
-                <button className="text-purple-500 bg-white px-10 py-4 shadow-md hover:shadow-xl rounded-full font-bold my-3 active:scale-90 transition duration-150">I'm flexible</button>
+                <button className="text-purple-500 bg-white px-10 py-4 shadow-md hover:shadow-xl rounded-full font-bold my-3 active:scale-90 transition duration-150"> Im flexible</button>
             </div>
         </div>
     )
