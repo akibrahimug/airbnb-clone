@@ -21,10 +21,11 @@ export default function Header() {
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white p-2 rounded-full cursor-pointer md:mx-2"/>
             </div>
             {/* right */}
-            <div className="flex space-x-4 items-center justify-end text-gray-500">
-               <p>Become a host</p>
+            <div className="flex space-x-2 items-center justify-end text-gray-500">
+               <p className="hidden md:inline cursor-pointer">Become a host</p>
                <GlobeAltIcon className="h-6 cursor-pointer"/>
-               <div className="flex items-center space-x-4 rounded-full p-2">
+
+               <div className="flex items-center space-x-2 rounded-full p-2 border-2">
                    <MenuIcon className="h-6"/>
                    <UserCircleIcon className="h-6" />
                </div>
