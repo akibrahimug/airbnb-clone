@@ -8,6 +8,8 @@ import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
 
 
+
+
 export default function Home({smallCardData, mediumCardData}) {
   return (
     <div className="">

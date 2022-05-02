@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
-import SearchCard from '../components/SearchCard';
+import SearchCard from '../components/SearchCard';  
+import Mapper from '../components/Mapper';
 
 export default function Search({searchResults}) {
     const router = useRouter();
@@ -14,13 +15,13 @@ export default function Search({searchResults}) {
     return (
         <div>
            <Header placeholder={`${location} | ${dateRange} | ${numberGuests}`}/>
-           <main className="flex mt-4 ml-4">
+           <main className="flex">
             {/* top-main */}
-            <section>
-                <p className="text-xs">300+ - {dateRange} - Stays for {numberGuests} guests</p>
+            <section className="mt-4 ml-4 xl:min-w-[38vw]">
+                <p className="text-xs text-gray-500">300+ - {dateRange} - Stays for {numberGuests} guests</p>
                 <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}</h1>
                 <div className="hidden md:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap"> 
-                    <p className="ll">Cancellation Flexibility</p>
+                    <p className="ll">Free Cancellation</p>
                     <p className="ll">Type of Place</p>
                     <p className="ll">Price</p>
                     <p className="ll">Rooms and Beds</p>
@@ -43,9 +44,11 @@ export default function Search({searchResults}) {
                     />
                 ))}
                 </div>
-            {/* right-main */}
+            
             </section>
-
+            <section className="hidden xl:inline-flex ml-2 xl:min-w-[60vw]" >
+                <Mapper searchResults={searchResults}/>
+            </section>
            </main> 
            <Footer />
         </div>

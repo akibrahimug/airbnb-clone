@@ -8,3 +8,15 @@
         @apply px-4 py-2 border rounded-full cursor-pointer active:scale-95 hover:shadow-lg transition transform duration-100 ease-out active:bg-gray-100
     }
 }
+
+.mapboxgl-popup-content{
+    padding: 0 !important;
+    border-radius: 20px !important;
+}
+
+.mapboxgl-popup-close-button{
+    padding-right: 10px;
+    padding-top: 5px;
+    font-size: 15px;
+    color: #fd5b61;
+}

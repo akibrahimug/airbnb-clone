@@ -12,7 +12,7 @@ const progress = new ProgressBar({
   color: "#fe595e",
 
   // Class name used for the progress bar element.
-  className: "z-50",
+  className: "bar",
 
   // How many milliseconds to wait before the progress bar
   // animation starts after calling .start().
