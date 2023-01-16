@@ -1,16 +1,74 @@
-import Head from 'next/head'
-import { title } from 'process';
-import Bunner from '../components/Bunner'
-import Footer from '../components/Footer';
-import Header from '../components/Header'
-import LargeCard from '../components/LargeCard';
-import MediumCard from '../components/MediumCard';
-import SmallCard from '../components/SmallCard';
+import Head from "next/head";
+import Bunner from "../components/Bunner";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import LargeCard from "../components/LargeCard";
+import MediumCard from "../components/MediumCard";
+import SmallCard from "../components/SmallCard";
 
+const smallCardData = [
+  {
+    img: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    location: "London",
+    distance: "40 minutes drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2593&q=80",
+    location: "Manchester",
+    distance: "4 hours drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1667018128153-af211358ea9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    location: "Cardiff",
+    distance: "45 minutes drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1581265064945-737852e55a53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    location: "Birkenhead",
+    distance: "4.5 hours drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1611434242391-1b108493f178?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2664&q=80",
+    location: "Newquay",
+    distance: "6 hours drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1632383269440-e9863a6873b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2566&q=80",
+    location: "Liverpool",
+    distance: "4.5 hours drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1639569809987-1b4dc47e9422?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80",
+    location: "Hove",
+    distance: "2 hours drive",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1586432680458-bcbfcc1e4bd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    location: "York",
+    distance: "4 hours drive",
+  },
+];
 
+const mediumCardData = [
+  {
+    img: "https://images.unsplash.com/photo-1543039625-14cbd3802e7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2674&q=80",
+    title: "Outdoor getaways",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1492889971304-ac16ab4a4a5a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2674&q=80",
+    title: "Unique stays",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    title: "Entire homes",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1612957775937-8157953886f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80",
+    title: "Pets allowed",
+  },
+];
 
-
-export default function Home({smallCardData, mediumCardData}) {
+export default function Home() {
   return (
     <div className="">
       <Head>
@@ -27,54 +85,53 @@ export default function Home({smallCardData, mediumCardData}) {
           <h2 className="text-4xl font-semibold">Explore Nearby</h2>
           {/* Api from server */}
           <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 ">
-          {smallCardData?.map(({img, location, distance}, index) => (
-            <SmallCard  
-            img={img} 
-            location={location} 
-            distance={distance}
-            key={index}
-            />
-          ))}
+            {smallCardData?.map(({ img, location, distance }, index) => (
+              <SmallCard
+                img={img}
+                location={location}
+                distance={distance}
+                key={index}
+              />
+            ))}
           </div>
         </section>
         <section>
           <h2 className="text-4xl font-semibold py-8">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 ml-3">
-          {mediumCardData?.map(({img, title}, index) => (
-            <MediumCard 
-              img={img}
-              title={title}
-              key={index}
-            />
-          ))}
+            {mediumCardData?.map(({ img, title }, index) => (
+              <MediumCard img={img} title={title} key={index} />
+            ))}
           </div>
         </section>
-        <LargeCard 
-        img="https://links.papareact.com/4cj"
-        title="The Greatest Outdoors"
-        descripiton="Wishlists curated by AirBnB"
-        buttonText="Get inspired"
-
+        <LargeCard
+          img="https://links.papareact.com/4cj"
+          title="The Greatest Outdoors"
+          descripiton="Wishlists curated by AirBnB"
+          buttonText="Get inspired"
         />
       </main>
       <footer>
         <Footer />
       </footer>
     </div>
-  )
+  );
 }
 
 // comming from the server
-export async function getStaticProps(){
-  const smallCardData = await fetch('https://links.papareact.com/pyp')
-  .then((res) => res.json());
-  
-  const mediumCardData = await fetch('https://links.papareact.com/zp1')
-  .then((res) => res.json());
-  return{
-    props: {
-      mediumCardData,
-      smallCardData
-    }
-  }
-}
+// export async function getStaticProps() {
+//   // rejectUnauthorized: false
+
+//   const smallCardData = await fetch("https://links.papareact.com/pyp", {}).then(
+//     (res) => res?.json()
+//   );
+
+//   const mediumCardData = await fetch("https://links.papareact.com/zp1", {
+//     rejectUnauthorized: false,
+//   }).then((res) => res?.json());
+//   return {
+//     props: {
+//       mediumCardData,
+//       smallCardData,
+//     },
+//   };
+// }
