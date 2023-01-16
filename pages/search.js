@@ -1,4 +1,4 @@
-import format from "date-fns/format/index";
+// import format from "date-fns/format/index";
 import { useRouter } from "next/router";
 import React from "react";
 import Footer from "../components/Footer";
@@ -52,25 +52,24 @@ const searchResults = [
     star: 4.5,
     price: "40/night",
     total: "157 total",
-    long: -0.109989,
-    lat: 51.698558,
+    long: -0.149989,
+    lat: 51.458558,
   },
 ];
 
 export default function Search() {
   const router = useRouter();
-  const { location, startDate, endDate, numberGuests } = router.query;
-  const formatStartDate = format(new Date(startDate), "dd MMMM yy");
-  const formatendDate = format(new Date(endDate), "dd MMMM yy");
-  const dateRange = `${formatStartDate} - ${formatendDate}`;
+  const { location, startDate, endDate, numberGuests } = router?.query;
+
+  const dateRange = `${startDate} - ${endDate}`;
   return (
     <div>
-      <Header placeholder={`${location} | ${dateRange} | ${numberGuests}`} />
+      <Header placeholder={`${location} | ${dateRange}| ${numberGuests}`} />
       <main className="flex">
         {/* top-main */}
         <section className="mt-4 ml-4 xl:min-w-[38vw]">
           <p className="text-xs text-gray-500">
-            300+ - {dateRange} - Stays for {numberGuests} guests
+            300+ - ${dateRange} - Stays for {numberGuests} guests
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
@@ -84,7 +83,7 @@ export default function Search() {
           </div>
           {/* left-main */}
           <div className="flex flex-col">
-            {searchResults.map(
+            {searchResults?.map(
               (
                 {
                   img,
